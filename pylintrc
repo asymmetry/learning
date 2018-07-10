@@ -114,6 +114,7 @@ disable=
     map-builtin-not-iterating,
 	# disabled by me
     W0613,
+    W0621,
 	W1113,
 	C0111,
 	C0413,
