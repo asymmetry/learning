@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# O(n)
+# hash map
+
 
 class Solution:
 
