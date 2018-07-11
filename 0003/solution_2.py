@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # O(n)
+# sliding window optimized
 
 
 class Solution:
