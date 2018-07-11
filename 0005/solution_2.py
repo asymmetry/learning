@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 
 # O(n^2)
+# expand around center
 
 
 class Solution:
+
+    def __init__(self):
+        self.len_s = None
 
     def longestPalindrome(self, s):
         """

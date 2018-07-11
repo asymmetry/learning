@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 # O(n^2)
+# dynamic programming
 
 
 class Solution:
