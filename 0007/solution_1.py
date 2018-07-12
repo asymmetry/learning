@@ -11,19 +11,19 @@ class Solution:
         :rtype: int
         """
 
-        sign = 1 if x >= 0 else -1
-
-        x = abs(x)
-
         result = 0
-        while x > 0:
-            result = result * 10 + x % 10
-            x = x // 10
+        while x != 0:
+            pop = x % 10 if x >= 0 else x % 10 - 10
+            pop = 0 if pop == -10 else pop
 
-        result = sign * result
+            if result > 214748364 or (result == 214748364 and pop > 7):
+                return 0
+            if result < -214748364 or (result == -214748364 and pop < -8):
+                return 0
 
-        if result > 2147483647 or result < -2147483648:
-            result = 0
+            result = result * 10 + pop
+
+            x = x // 10 if x >= 0 else (x - 1) // 10 + 1
 
         return result
 
