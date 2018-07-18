@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# O(N*log(N))
+# O(n*log(n))
 # greedy algorithm
 
 

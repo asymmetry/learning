@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# O(N^2)
+# O(n^2)
 # dynamic programming
 
 
