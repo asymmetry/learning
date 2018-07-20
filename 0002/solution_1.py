@@ -8,6 +8,23 @@ class ListNode:
         self.val = x
         self.next = None
 
+    def __repr__(self):
+        p = self
+        result = f'{p.val}'
+        while p.next is not None:
+            p = p.next
+            result += f' -> {p.val}'
+        return result
+
+
+def _makeList(l):
+    result = ListNode(None)
+    pointer = result
+    for val in l:
+        pointer.next = ListNode(val)
+        pointer = pointer.next
+    return result.next
+
 
 class Solution:
 
@@ -44,17 +61,4 @@ class Solution:
 
 
 if __name__ == '__main__':
-    l1 = ListNode(2)
-    l1.next = ListNode(4)
-    l1.next.next = ListNode(3)
-    l2 = ListNode(5)
-    l2.next = ListNode(6)
-    l2.next.next = ListNode(4)
-
-    result = Solution().addTwoNumbers(l1, l2)
-
-    print(result.val, end='')
-    while result.next is not None:
-        result = result.next
-        print(f' -> {result.val}', end='')
-    print('')
+    print(Solution().addTwoNumbers(_makeList([2, 4, 3]), _makeList([5, 6, 4])))
