@@ -8,6 +8,23 @@ class ListNode:
         self.val = x
         self.next = None
 
+    def __repr__(self):
+        p = self
+        result = f'{p.val}'
+        while p.next is not None:
+            p = p.next
+            result += f' -> {p.val}'
+        return result
+
+
+def _makeList(l):
+    result = ListNode(None)
+    pointer = result
+    for val in l:
+        pointer.next = ListNode(val)
+        pointer = pointer.next
+    return result.next
+
 
 class Solution:
 
@@ -35,17 +52,4 @@ class Solution:
 
 
 if __name__ == '__main__':
-    root = ListNode(1)
-    pointer = root
-
-    for i in range(2, 6):
-        pointer.next = ListNode(i)
-        pointer = pointer.next
-
-    result = Solution().removeNthFromEnd(root, 5)
-
-    print(result.val, end='')
-    while result.next is not None:
-        result = result.next
-        print(f' -> {result.val}', end='')
-    print('')
+    print(Solution().removeNthFromEnd(_makeList(x for x in range(1, 6)), 2))
