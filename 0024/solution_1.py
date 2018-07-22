@@ -1,24 +1,29 @@
 #!/usr/bin/env python3
 
 
-def print_list(l):
-    if l is None:
-        print('')
-        return
-
-    print(l.val, end='')
-    while l.next is not None:
-        l = l.next
-        print(f' -> {l.val}', end='')
-    print('')
-
-
 # Definition for singly-linked list.
 class ListNode:
 
     def __init__(self, x):
         self.val = x
         self.next = None
+
+    def __repr__(self):
+        p = self
+        result = f'{p.val}'
+        while p.next is not None:
+            p = p.next
+            result += f' -> {p.val}'
+        return result
+
+
+def _makeList(l):
+    result = ListNode(None)
+    pointer = result
+    for val in l:
+        pointer.next = ListNode(val)
+        pointer = pointer.next
+    return result.next
 
 
 class Solution:
@@ -52,13 +57,4 @@ class Solution:
 
 
 if __name__ == '__main__':
-    list1 = [1, 2, 3, 4]
-    l1 = ListNode(list1[0])
-    pointer = l1
-    for val in list1[1:]:
-        pointer.next = ListNode(val)
-        pointer = pointer.next
-
-    result = Solution().swapPairs(l1)
-
-    print_list(result)
+    print(Solution().swapPairs(_makeList([1, 2, 3, 4])))
