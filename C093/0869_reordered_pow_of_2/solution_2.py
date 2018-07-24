@@ -17,11 +17,11 @@ class Solution:
 
         length = int(math.log10(N))
 
-        count = collections.Counter(str(N))
+        counter = collections.Counter(str(N))
 
         pow2 = 1 << (length * 3)
         while pow2 < N * 10:
-            if count == collections.Counter(str(pow2)):
+            if counter == collections.Counter(str(pow2)):
                 return True
             pow2 = pow2 << 1
 
