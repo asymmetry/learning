@@ -69,6 +69,6 @@ class Solution:
 
 
 if __name__ == '__main__':
-    print(Solution().shortestSuperstring(["alex", "loves", "leetcode"]))
+    print(Solution().shortestSuperstring(['alex', 'loves', 'leetcode']))
     print(Solution().shortestSuperstring(
-        ["catg", "ctaagt", "gcta", "ttca", "atgcatc"]))
+        ['catg', 'ctaagt', 'gcta', 'ttca', 'atgcatc']))
