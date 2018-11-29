@@ -12,9 +12,6 @@ class Solution:
         l_a = len(A)
         l_w = len(A[0])
 
-        if l_a == 1:
-            return 0
-
         result = [0] * l_w
         old_w = A[0]
         for w in A[1:]:
