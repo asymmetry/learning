@@ -51,4 +51,4 @@ class Solution:
 
 if __name__ == '__main__':
     print(Solution().largestTimeFromDigits([1, 2, 3, 4]))
-    print(Solution().largestTimeFromDigits([2, 2, 6, 6]))
+    print(Solution().largestTimeFromDigits([5, 5, 5, 5]))
